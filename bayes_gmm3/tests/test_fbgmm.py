@@ -8,8 +8,8 @@ import numpy as np
 import numpy.testing as npt
 import random
 
-from bayes_gmm.niw import NIW
-from bayes_gmm.fbgmm import FBGMM
+from bayes_gmm3.niw import NIW
+from bayes_gmm3.fbgmm import FBGMM
 
 
 def test_sampling_2d_assignments():

@@ -10,8 +10,8 @@ import numpy as np
 import numpy.testing as npt
 import random
 
-from bayes_gmm.niw import NIW
-from bayes_gmm.igmm import IGMM
+from bayes_gmm3.niw import NIW
+from bayes_gmm3.igmm import IGMM
 
 
 def test_sampling_2d_assignments():

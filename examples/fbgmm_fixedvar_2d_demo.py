@@ -16,8 +16,8 @@ import sys
 
 sys.path.append("..")
 
-from bayes_gmm.gaussian_components_fixedvar import FixedVarPrior
-from bayes_gmm.fbgmm import FBGMM
+from bayes_gmm3.gaussian_components_fixedvar import FixedVarPrior
+from bayes_gmm3.fbgmm import FBGMM
 from plot_utils import plot_ellipse, plot_mixture_model
 
 logging.basicConfig(level=logging.INFO)

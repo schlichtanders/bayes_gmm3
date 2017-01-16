@@ -9,8 +9,8 @@ Date: 2014
 import numpy as np
 import numpy.testing as npt
 
-from bayes_gmm.gaussian_components import log_post_pred_unvectorized, GaussianComponents
-from bayes_gmm.niw import NIW
+from bayes_gmm3.gaussian_components import log_post_pred_unvectorized, GaussianComponents
+from bayes_gmm3.niw import NIW
 
 
 def test_log_prior_3d():

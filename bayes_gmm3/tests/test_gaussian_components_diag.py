@@ -9,8 +9,8 @@ import math
 import numpy as np
 import numpy.testing as npt
 
-from bayes_gmm.gaussian_components_diag import GaussianComponentsDiag, log_post_pred_unvectorized, students_t
-from bayes_gmm.niw import NIW
+from bayes_gmm3.gaussian_components_diag import GaussianComponentsDiag, log_post_pred_unvectorized, students_t
+from bayes_gmm3.niw import NIW
 
 
 

@@ -115,7 +115,7 @@ class GaussianComponentsFixedVar(object):
     def _cache(self):
         self._cached_neg_half_D_log_2pi = -0.5*self.D*math.log(2.*np.pi)
         self.cached_log_prior = np.zeros(self.N, np.float)
-        for i in xrange(self.N):
+        for i in range(self.N):
             self.cached_log_prior[i] = self.log_prior(i)
 
     def cache_component_stats(self, k):
@@ -259,7 +259,7 @@ class GaussianComponentsFixedVar(object):
         p(X|z) = p(x_1, x_2, ... x_N | z_1, z_2, ..., z_N) is returned.
         """
         log_prob_X_given_z = 0.
-        for k in xrange(self.K):
+        for k in range(self.K):
             log_prob_X_given_z += self.log_marg_k(k)
         return log_prob_X_given_z
 

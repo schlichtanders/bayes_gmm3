@@ -14,7 +14,7 @@ def draw(p_k):
     Indices returned are between 0 and len(p_k) - 1.
     """
     k_uni = random.random()
-    for i in xrange(len(p_k)):
+    for i in range(len(p_k)):
         k_uni = k_uni - p_k[i]
         if k_uni < 0:
             return i

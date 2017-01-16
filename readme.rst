@@ -2,6 +2,7 @@
 Bayes GMM: Bayesian Gaussian Mixture Models
 ===========================================
 
+Python3 version
 
 Overview
 --------

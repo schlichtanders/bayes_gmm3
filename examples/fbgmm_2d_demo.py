@@ -16,8 +16,8 @@ import sys
 
 sys.path.append("..")
 
-from bayes_gmm.niw import NIW
-from bayes_gmm.fbgmm import FBGMM
+from bayes_gmm3.niw import NIW
+from bayes_gmm3.fbgmm import FBGMM
 from plot_utils import plot_ellipse, plot_mixture_model
 
 logging.basicConfig(level=logging.INFO)

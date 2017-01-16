@@ -10,7 +10,7 @@ import logging
 import math
 import numpy as np
 
-import wishart
+from . import wishart
 
 logger = logging.getLogger(__name__)
 
@@ -114,7 +114,7 @@ class GaussianComponents(object):
         self._cached_prior_outer_m_0 = np.outer(self.prior.m_0, self.prior.m_0)
 
         self._cached_outer = np.zeros((self.N, self.D, self.D), np.float)
-        for i in xrange(self.N):
+        for i in range(self.N):
             self._cached_outer[i, :, :] = np.outer(self.X[i], self.X[i])
 
         n = np.concatenate([[1], np.arange(1, self.prior.v_0 + self.N + 2)])  # first element dud for indexing
@@ -123,7 +123,7 @@ class GaussianComponents(object):
         self._cached_log_pi = math.log(np.pi)
 
         self.cached_log_prior = np.zeros(self.N, np.float)
-        for i in xrange(self.N):
+        for i in range(self.N):
             self.cached_log_prior[i] = self.log_prior(i)
 
     def cache_component_stats(self, k):
@@ -284,7 +284,7 @@ class GaussianComponents(object):
         p(X|z) = p(x_1, x_2, ... x_N | z_1, z_2, ..., z_N) is returned.
         """
         log_prob_X_given_z = 0.
-        for k in xrange(self.K):
+        for k in range(self.K):
             log_prob_X_given_z += self.log_marg_k(k)
         return log_prob_X_given_z
 
@@ -382,9 +382,9 @@ def main():
         ]), prior)
     gmm.add_item(0, 0)
     gmm.add_item(1, 0)
-    print "Log prior of [0.5, 0.4, 0.3]:", gmm.log_prior(2)
-    print "Log posterior of [0.5, 0.4, 0.3]:", gmm.log_post_pred_k(2, 0)
-    print
+    print("Log prior of [0.5, 0.4, 0.3]:", gmm.log_prior(2))
+    print("Log posterior of [0.5, 0.4, 0.3]:", gmm.log_post_pred_k(2, 0))
+    print()
 
 
     # ADDING AND REMOVING DATA VECTORS EXAMPLE
@@ -395,15 +395,15 @@ def main():
         [-0.1, 0.8],
         [0.5, 0.4]
         ]), prior)
-    print "Log prior of [1.2, 0.9]:", gmm.log_prior(0)
+    print("Log prior of [1.2, 0.9]:", gmm.log_prior(0))
     gmm.add_item(0, 0)
     gmm.add_item(1, 0)
-    print "Log posterior of [0.5, 0.4]:", gmm.log_post_pred_k(2, 0)
+    print("Log posterior of [0.5, 0.4]:", gmm.log_post_pred_k(2, 0))
     gmm.add_item(2, 0)
-    print "Log posterior of [0.5, 0.4] after adding:", gmm.log_post_pred_k(2, 0)
+    print("Log posterior of [0.5, 0.4] after adding:", gmm.log_post_pred_k(2, 0))
     gmm.del_item(2)
-    print "Log posterior of [0.5, 0.4] after removing:", gmm.log_post_pred_k(2, 0)
-    print
+    print("Log posterior of [0.5, 0.4] after removing:", gmm.log_post_pred_k(2, 0))
+    print()
 
 
     # LOG MARGINAL EXAMPLE
@@ -426,8 +426,8 @@ def main():
 
     # Calculate log marginal of data
     log_marg = gmm.log_marg_k(0)
-    print "Log marginal:", gmm.log_marg_k(0)
-    print
+    print("Log marginal:", gmm.log_marg_k(0))
+    print()
 
 
     # HIGHER DIMENSIONAL EXAMPLE
@@ -456,10 +456,10 @@ def main():
     prior = NIW(m_0, k_0, v_0, S_0)
     gmm = GaussianComponents(X, prior, [0, 0, 0, 1, 0, 1, 3, 4, 3, 2, -1])
 
-    print "Consider vector:", X[10]
-    print "Log post predictive:", log_post_pred_unvectorized(gmm, 10)
-    print "Log post predictive:", gmm.log_post_pred(10)
-    print "Log marginal for component 0:", gmm.log_marg_k(0)
+    print("Consider vector:", X[10])
+    print("Log post predictive:", log_post_pred_unvectorized(gmm, 10))
+    print("Log post predictive:", gmm.log_post_pred(10))
+    print("Log marginal for component 0:", gmm.log_marg_k(0))
 
 if __name__ == "__main__":
     main()

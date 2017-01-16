@@ -8,7 +8,7 @@ import math
 import numpy as np
 import numpy.testing as npt
 
-from bayes_gmm.gaussian_components_fixedvar import (
+from bayes_gmm3.gaussian_components_fixedvar import (
     GaussianComponentsFixedVar, FixedVarPrior, log_norm_pdf, log_post_pred_unvectorized
     )
 

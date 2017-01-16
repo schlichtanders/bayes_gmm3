@@ -21,8 +21,8 @@ import sys
 
 sys.path.append("..")
 
-from bayes_gmm.niw import NIW
-from bayes_gmm.igmm import IGMM
+from bayes_gmm3.niw import NIW
+from bayes_gmm3.igmm import IGMM
 from plot_utils import plot_ellipse, plot_mixture_model
 
 data_fn = "test_data_2013-10-09.pkl"
